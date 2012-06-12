@@ -1,0 +1,8 @@
+.svn
+.DS_Store
+/harvardcards/protected/config/database.php
+/harvardcards/protected/config/ldap.php
+/harvardcards/protected/config/isites.php
+/harvardcards/assets/*
+/harvardcards/protected/runtime/*
+/harvardcards/protected/runtime/application.log

@@ -11,6 +11,17 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
 
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+	  .login-box {
+		  margin: 20px;
+		  padding: 10px;
+		  background-color: gray;
+	  }
+    </style>
+
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.9.1.min.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap.min.js"></script>
 
@@ -20,7 +31,56 @@
 
 <body>
 
-	asdf
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/index.php"><?php echo CHtml::encode(Yii::app()->name); ?></a>
+          <div class="btn-group pull-right">
+	
+			<?php if(Yii::app()->user->isGuest) {?>
+            <a id="login-btn" class="btn dropdown-toggle" href="/site/login">
+              <i class="icon-user"></i> Login
+              <span class="caret"></span>
+            </a>
+			<?php } else {?>
+            <a id="login-btn" class="btn" data-toggle="dropdown" href="#">
+              <i class="icon-user"></i> <?php echo Yii::app()->user->name; ?>
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+
+              <li><a href="/site/logout">Sign Out</a></li>
+            </ul>
+			<?php } ?>
+
+          </div>
+          <div class="nav-collapse">
+            <ul class="nav">
+<!-- 
+             <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+-->
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+		<?php echo $content; ?>
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
 
 </body>
 </html>

@@ -13,13 +13,15 @@
 
     <style>
       body {
-        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+		  padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
       }
-	  .login-box {
+	  .splash-box {
 		  margin: 20px;
-		  padding: 10px;
-		  background-color: gray;
+		  padding: 10px;	
+		  background-color: #CCCCCC;  	
+		  border-radius: 5px;
 	  }
+	  
     </style>
 
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.9.1.min.js"></script>

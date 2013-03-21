@@ -6,7 +6,7 @@
 
 require_once("Autoincrement.php");
 
-class m130321_154320_create_users_table extends CDbMigration
+class m130321_154320_Users extends CDbMigration
 {
 	public function up()
 	{

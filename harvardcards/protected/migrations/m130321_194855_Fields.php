@@ -10,20 +10,21 @@ class m130321_194855_Fields extends CDbMigration
 {
 	public function up()
 	{
-		$this->createTable('DECKS', array(
+		$this->createTable('FIELDS', array(
 			'ID' => 'pk',
 			'TITLE' => 'string NOT NULL',
+			'TYPE' => 'string NOT NULL'
 		));
 			
-		Autoincrement::up('DECKS', Yii::app()->db->driverName);
+		Autoincrement::up('FIELDS', Yii::app()->db->driverName);
 			
 	}
 
 	public function down()
 	{
-		$this->dropTable('DECKS');
+		$this->dropTable('FIELDS');
 		
-		Autoincrement::down('DECKS', Yii::app()->db->driverName);
+		Autoincrement::down('FIELDS', Yii::app()->db->driverName);
 	}
 
 	/*

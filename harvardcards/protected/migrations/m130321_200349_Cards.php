@@ -6,25 +6,25 @@
 
 require_once("Autoincrement.php");
 
-class m130321_194605_Decks extends CDbMigration
+class m130321_200349_Cards extends CDbMigration
 {
 	public function up()
 	{
-		$this->createTable('DECKS', array(
+		$this->createTable('CARDS', array(
 			'ID' => 'pk',
-			'COLLECTION_ID' => 'number',
 			'TITLE' => 'string NOT NULL',
+			'TYPE' => 'string NOT NULL'
 		));
 			
-		Autoincrement::up('DECKS', Yii::app()->db->driverName);
+		Autoincrement::up('CARDS', Yii::app()->db->driverName);
 			
 	}
 
 	public function down()
 	{
-		$this->dropTable('DECKS');
+		$this->dropTable('CARDS');
 		
-		Autoincrement::down('DECKS', Yii::app()->db->driverName);
+		Autoincrement::down('CARDS', Yii::app()->db->driverName);
 	}
 
 	/*

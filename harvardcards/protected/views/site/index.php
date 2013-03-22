@@ -1,5 +1,15 @@
 <?php $this->pageTitle=Yii::app()->name; ?>
 
+<style>
+.cbtn-login {
+	width: 160px !important
+}
+.splash-box ul li {
+	list-style: none;
+	margin-bottom: 15px;
+}
+</style>
+
 <h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
 
 <div class="row-fluid">
@@ -14,60 +24,15 @@
 	</div>
 	<div class="span6">
 
-		<div class="login-box splash-box tabbable">
-			<ul class="nav nav-tabs">
-				<li class="active">
-					<a href="#tab1" data-toggle="tab">Google</a>
-				</li>
-				<li>
-					<a href="#tab2" data-toggle="tab">HUID</a>
-				</li>
+		<div class="splash-box" style="text-align: center;">
+			<h4>Log in</h4><hr/>
+			<ul>
+				<li><a class="btn btn-success cbtn-login">Google</a></li>
+				<li><a class="btn btn-success cbtn-login">Harvard Pin</a></li>
+				<li><a class="btn btn-danger cbtn-login" href="{url url='/collections/index'}">Guest</a></li>
 			</ul>
-			
-			<div class="tab-content">
-				
-				<form class="form-horizontal tab-pane active" id="tab1">
-					<div class="control-group">
-						<label class="control-label" for="inputEmail">Email</label>
-						<div class="controls">
-							<input type="text" id="inputEmail" placeholder="Email" />
-						</div>
-					</div>
-					
-					<div class="control-group">
-						<label class="control-label" for="inputPassword">Password</label>
-						<div class="controls">
-							<input type="password" id="inputPassword" placeholder="Password" />
-						</div>
-					</div>
-					<div style="margin: auto; width: 80px">
-				    <button type="submit" class="btn">Login</button>
-					</div>
-				</form>
-			
-				<form class="form-horizontal tab-pane" id="tab2">
-					<div class="control-group">
-						<label class="control-label" for="inputEmail">HUID</label>
-						<div class="controls">
-							<input type="text" id="inputEmail" placeholder="HUID" />
-						</div>
-					</div>
-				
-					<div class="control-group">
-						<label class="control-label" for="inputPassword">Password</label>
-						<div class="controls">
-							<input type="password" id="inputPassword" placeholder="Password" />
-						</div>
-					</div>
-					<div style="margin: auto; width: 80px">
-				    <button type="submit" class="btn">Login</button>
-					</div>
-				</form>
-			
-			</div>
-			
 		</div>
-		
+
 	</div>
 </div>
 

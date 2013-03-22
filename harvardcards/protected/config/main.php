@@ -79,6 +79,19 @@ return array(
 				*/
 			),
 		),
+		'viewRenderer'=>array(
+	  		'class'=>'ext.smarty-renderer.ESmartyViewRenderer',
+	    	'fileExtension' => '.tpl',
+	    	'pluginsDir' => 'application.smartyPlugins',
+	    	//'configDir' => 'application.smartyConfig',
+	    	//'prefilters' => array(array('MyClass','filterMethod')),
+	    	//'postfilters' => array(),
+	    	//'config'=>array(
+	    	//    'force_compile' => YII_DEBUG,
+	    	//   ... any Smarty object parameter
+	    	//)
+		),
+		
 	),
 
 	// application-level parameters that can be accessed

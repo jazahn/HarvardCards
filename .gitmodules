@@ -1,0 +1,3 @@
+[submodule "harvardcards/protected/extensions/smarty-renderer"]
+	path = harvardcards/protected/extensions/smarty-renderer
+	url = git://github.com/jazahn/smarty-renderer.git

@@ -74,7 +74,7 @@
       </div>
     </div>
 
-    <div class="container">
+    <div id="container" class="container">
 
 		<?php echo $content; ?>
 
@@ -86,15 +86,14 @@
 
 <script>
 dohash = function(hash){
+	//console.log("dohash");
 	if(document.location.hash != ''){
-		// get the ajax link for the hash url value
-		//console.log(document.location.hash);
-		//console.log(ajaxurl(document.location.hash));
-
 		var locationhash = document.location.hash;
 		if(locationhash.match(/^#\//)){
 			newlocation = locationhash.replace(/^#([^#]*)/, "$1");
-			$('#content').load(newlocation);					
+			$('#container').load(newlocation, function() {
+				alert('Load was performed.');
+			});
 		}
 	}
 }
@@ -107,7 +106,6 @@ window.onhashchange = function(hash){
 $(document).ready(function(){
 	dohash();
 });
-
 
 //]]>	
 </script>

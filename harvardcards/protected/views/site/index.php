@@ -4,8 +4,12 @@
 .cbtn-login {
 	width: 160px !important
 }
-.splash-box ul li {
+.splash-box ul {
 	list-style: none;
+	margin: 0px;
+	
+}
+.splash-box ul li {
 	margin-bottom: 15px;
 }
 </style>
@@ -29,7 +33,7 @@
 			<ul>
 				<li><a class="btn btn-success cbtn-login">Google</a></li>
 				<li><a class="btn btn-success cbtn-login">Harvard Pin</a></li>
-				<li><a class="btn btn-danger cbtn-login" href="{url url='/collections/index'}">Guest</a></li>
+				<li><a class="btn btn-danger cbtn-login" href="/#/collections/index">Guest</a></li>
 			</ul>
 		</div>
 

@@ -1,0 +1,16 @@
+RewriteEngine on
+
+# RewriteRule server-health ${APACHE_DOCS}/server-health.php
+
+# if a directory or a file exists, use it directly
+
+RewriteCond %{REQUEST_FILENAME} !-f 
+
+RewriteCond %{REQUEST_FILENAME} !-d 
+
+RewriteCond %{REQUEST_FILENAME} !server-
+
+
+# otherwise forward it to index.php
+
+RewriteRule . index.php

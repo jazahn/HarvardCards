@@ -59,6 +59,7 @@ class CollectionController extends Controller
 		
     public function actionIndex()
     {
+		$this->layout = false;
 		error_log("actionIndex");
 		$this->render('index', array());
     }

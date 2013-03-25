@@ -76,7 +76,7 @@
 
     <div id="container" class="container">
 
-		<?php echo $content; ?>
+		<?php //echo $content; ?>
 
     </div> <!-- /container -->
 
@@ -86,16 +86,19 @@
 
 <script>
 var dohash = function(hash){
-	//console.log("dohash");
+	console.log("dohash");
 	if(document.location.hash != ''){
 		var locationhash = document.location.hash;
 		if(locationhash.match(/^#\//)){
 			var newlocation = locationhash.replace(/^#([^#]*)/, "$1");
 			$('#container').load(newlocation);
-		}
+		} 
+	} else {
+		$('#container').load('/site/splash');
 	}
 }
 
+// I think this may be causing an issue...
 $(window).on('hashchange', dohash);
 
 $(document).ready(function(){

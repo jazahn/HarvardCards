@@ -84,5 +84,32 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
 
+<script>
+dohash = function(hash){
+	if(document.location.hash != ''){
+		// get the ajax link for the hash url value
+		//console.log(document.location.hash);
+		//console.log(ajaxurl(document.location.hash));
+
+		var locationhash = document.location.hash;
+		if(locationhash.match(/^#\//)){
+			newlocation = locationhash.replace(/^#([^#]*)/, "$1");
+			$('#content').load(newlocation);					
+		}
+	}
+}
+
+window.onhashchange = function(hash){
+	//console.log('onhashchange');
+	dohash();
+}
+
+$(document).ready(function(){
+	dohash();
+});
+
+
+//]]>	
+</script>
 </body>
 </html>

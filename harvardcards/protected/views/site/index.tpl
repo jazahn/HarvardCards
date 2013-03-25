@@ -1,5 +1,3 @@
-<?php $this->pageTitle=Yii::app()->name; ?>
-
 <style>
 .cbtn-login {
 	width: 160px !important
@@ -14,7 +12,7 @@
 }
 </style>
 
-<h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
+<h1>Welcome to <i>{$app_name}</i></h1>
 
 <div class="row-fluid">
 	<div class="span6">
@@ -33,7 +31,7 @@
 			<ul>
 				<li><a class="btn btn-success cbtn-login">Google</a></li>
 				<li><a class="btn btn-success cbtn-login">Harvard Pin</a></li>
-				<li><a class="btn btn-danger cbtn-login" href="/#/collections/index">Guest</a></li>
+				<li><a class="btn btn-danger cbtn-login" href="/#/collection/index">Guest</a></li>
 			</ul>
 		</div>
 

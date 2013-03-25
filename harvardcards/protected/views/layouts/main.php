@@ -85,23 +85,18 @@
     <!-- Placed at the end of the document so the pages load faster -->
 
 <script>
-dohash = function(hash){
+var dohash = function(hash){
 	//console.log("dohash");
 	if(document.location.hash != ''){
 		var locationhash = document.location.hash;
 		if(locationhash.match(/^#\//)){
-			newlocation = locationhash.replace(/^#([^#]*)/, "$1");
-			$('#container').load(newlocation, function() {
-				alert('Load was performed.');
-			});
+			var newlocation = locationhash.replace(/^#([^#]*)/, "$1");
+			$('#container').load(newlocation);
 		}
 	}
 }
 
-window.onhashchange = function(hash){
-	//console.log('onhashchange');
-	dohash();
-}
+$(window).on('hashchange', dohash);
 
 $(document).ready(function(){
 	dohash();

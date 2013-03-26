@@ -10,6 +10,10 @@
 	padding: 9px 15px;
 	border: solid 1px;
 	border-radius: 5px;	
+	border-color: #AAAAAA;
+}
+.collection-sidenav ul li a:hover {
+	background-color: #DDDDDD;	
 }
 .collection-sidenav ul li ul.inline {
 	padding: 0px;
@@ -117,7 +121,7 @@
 <script>
 $(document).ready(function(){
 	$('#add_collection_button').click(function(){
-		window.location = '/#/collection/wizard1';
+		window.location = '/collection/wizard1';
 	});
 });
 </script>

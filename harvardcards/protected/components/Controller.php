@@ -9,7 +9,8 @@ class Controller extends CController
 	 * @var string the default layout for the controller view. Defaulting to false so the 
 	 * default is an ajaxy thing that isn't using a layout
 	 */
-	public $layout = false;
+	//public $layout = false;
+	public $layout = "/layouts/main";
 	/**
 	 * @var array context menu items. This property will be assigned to {@link CMenu::items}.
 	 */

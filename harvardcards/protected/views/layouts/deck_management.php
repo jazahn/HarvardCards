@@ -1,3 +1,4 @@
+<?php require_once('header.php'); ?>
 <style>
 .deck_management {
 	margin-top: 120px;

@@ -44,7 +44,7 @@ class CollectionController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index', 'wizard1', 'wizard1form'),
+				'actions'=>array('index', 'wizard1', 'wizard1form', 'wizard2'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -60,14 +60,29 @@ class CollectionController extends Controller
     public function actionIndex()
     {
 		$this->layout = '//layouts/deck_management';
-		error_log("actionIndex");
+		//error_log("actionIndex");
 		$this->render('index', array());
     }
 	
 	public function actionWizard1()
 	{
 		$this->layout = '//layouts/deck_management';
-		error_log("actionWizard1");
+		//error_log("actionWizard1");
+				
+		if(isset($_REQUEST['submit'])){
+			$title = Yii::app()->getRequest()->getParam('title');
+			$desc = Yii::app()->getRequest()->getParam('desc');
+		
+			$errors = array();
+			if($title == '')
+				$errors['no_title'] = 1;
+			if($desc == '')
+				$errors['no_desc'] = 1;
+			if(empty($errors)){
+				// insert into db
+			}
+		}
+		
 		$this->render('wizard1', array());		
 	}
 	
@@ -89,6 +104,12 @@ class CollectionController extends Controller
 
 		echo json_encode(array('errors'=>$errors));
 		Yii::app()->end();
+	}
+	
+	public function actionWizard2(){
+		$this->layout = '//layouts/deck_management';
+		//error_log("actionWizard2");
+		$this->render('fields_form', array());		
 	}
  
     

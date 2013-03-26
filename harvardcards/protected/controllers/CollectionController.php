@@ -60,14 +60,12 @@ class CollectionController extends Controller
     public function actionIndex()
     {
 		$this->layout = '//layouts/deck_management';
-		//error_log("actionIndex");
 		$this->render('index', array());
     }
 	
 	public function actionWizard1()
 	{
 		$this->layout = '//layouts/deck_management';
-		//error_log("actionWizard1");
 				
 		if(isset($_REQUEST['submit'])){
 			$title = Yii::app()->getRequest()->getParam('title');
@@ -80,36 +78,23 @@ class CollectionController extends Controller
 				$errors['no_desc'] = 1;
 			if(empty($errors)){
 				// insert into db
+				// if the insert doesn't fail
+				$collection_id = 1;
+				$this->redirect('/collection/wizard2/'.$collection_id);
 			}
 		}
 		
 		$this->render('wizard1', array());		
 	}
 	
-	public function actionWizard1form(){
-		$this->layout = false;
-		$title = Yii::app()->getRequest()->getParam('title');
-		$desc = Yii::app()->getRequest()->getParam('desc');
-		
-		$errors = array();
-		if($title == '')
-			$errors['no_title'] = 1;
-		if($desc == '')
-			$errors['no_desc'] = 1;
-		if(empty($errors)){
-			// insert into db
-		}
-			
-//			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
-
-		echo json_encode(array('errors'=>$errors));
-		Yii::app()->end();
-	}
 	
 	public function actionWizard2(){
 		$this->layout = '//layouts/deck_management';
-		//error_log("actionWizard2");
-		$this->render('fields_form', array());		
+		// 
+		$collection_name = "Course Whatever";
+		$this->render('wizard2', array(
+			'collection_name' => $collection_name
+		));		
 	}
  
     

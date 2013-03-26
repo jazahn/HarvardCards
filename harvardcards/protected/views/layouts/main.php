@@ -13,7 +13,7 @@
 
     <style>
       body {
-		  padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+		  /* padding-top: 60px;*/ /* 60px to make the container go all the way to the bottom of the topbar */
       }
 	  .splash-box {
 		  margin: 20px;
@@ -33,6 +33,7 @@
 
 <body>
 
+	<!--
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
@@ -63,18 +64,14 @@
           </div>
           <div class="nav-collapse">
             <ul class="nav">
-<!-- 
-             <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
--->
             </ul>
-          </div><!--/.nav-collapse -->
+          </div>
         </div>
       </div>
     </div>
+	-->
 
-    <div class="container">
+    <div id="container" class="container-fluid">
 
 		<?php echo $content; ?>
 
@@ -84,5 +81,28 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
 
+<script>
+var dohash = function(hash){
+	console.log("dohash");
+	if(document.location.hash != ''){
+		var locationhash = document.location.hash;
+		if(locationhash.match(/^#\//)){
+			var newlocation = locationhash.replace(/^#([^#]*)/, "$1");
+			$('#container').load(newlocation);
+		} 
+	} else {
+		$('#container').load('/site/splash');
+	}
+}
+
+// I think this may be causing an issue...
+$(window).on('hashchange', dohash);
+
+$(document).ready(function(){
+	dohash();
+});
+
+//]]>	
+</script>
 </body>
 </html>

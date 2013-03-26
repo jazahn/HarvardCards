@@ -55,7 +55,7 @@
 			<li><a href="#">Course 3<i class="icon-chevron-right pull-right"></i></a></li>
 			<li>
 				<ul class="unstyled inline">
-					<li><button class="btn">+</button></li>
+					<li><button id="add_collection_button" class="btn">+</button></li>
 					<li><button class="btn">-</button></li>
 					<li><button class="btn">++</button></li>
 					<li><button class="btn">E</button></li>
@@ -113,3 +113,11 @@
 		</ul>
 	</section>
 </div>
+
+<script>
+$(document).ready(function(){
+	$('#add_collection_button').click(function(){
+		window.location = '/#/collection/wizard1';
+	});
+});
+</script>

@@ -94,7 +94,7 @@ class CollectionController extends Controller
 		$collection_name = "Course Whatever";
 		$this->render('wizard2', array(
 			'collection_name' => $collection_name
-		));		
+		));
 	}
  
     

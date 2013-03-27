@@ -12,7 +12,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="/"><?php echo CHtml::encode(Yii::app()->name); ?></a>
+          <a class="brand" href="<?php echo $this->createUrl('/'); ?>"><?php echo CHtml::encode(Yii::app()->name); ?></a>
           <div class="btn-group pull-right">
 	
 			<?php if(Yii::app()->user->isGuest) {?>

@@ -31,7 +31,7 @@
 			<ul>
 				<li><a class="btn btn-success cbtn-login">Google</a></li>
 				<li><a class="btn btn-success cbtn-login">Harvard Pin</a></li>
-				<li><a class="btn btn-danger cbtn-login" href="/collection/index">Guest</a></li>
+				<li><a class="btn btn-danger cbtn-login" href="{$this->createUrl("/collection/index")}">Guest</a></li>
 			</ul>
 		</div>
 

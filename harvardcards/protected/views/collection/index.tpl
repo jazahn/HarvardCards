@@ -121,7 +121,7 @@
 <script>
 $(document).ready(function(){
 	$('#add_collection_button').click(function(){
-		window.location = '/collection/wizard1';
+		window.location = "{$this->createUrl('/collection/wizard1')}";
 	});
 });
 </script>

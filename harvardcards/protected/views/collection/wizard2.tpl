@@ -2,6 +2,7 @@
 section {
 	border: solid #CCCCCC 1px;
 	border-radius: 5px;
+	margin-left: 10px;
 }
 section.field-form ul {
 	padding: 15px;
@@ -26,10 +27,15 @@ section.field-form ul {
 .form-reveal {
 	background-color: #AAAAAA;
 }
+h4 {
+	text-align: center;
+}
+
 </style>
 <div class="row-fluid">
 	<section class="span6 field-form">
 		<form>
+			<h4>Display</h4>
 			<ul class="unstyled form-display nav" style="">
 				<li>
 					<input type="checkbox" name="showtitle1" class="show-title" />
@@ -62,6 +68,7 @@ section.field-form ul {
 					</select>
 				</li>
 			</ul>
+			<h4>Reveal</h4>
 			<ul class="unstyled form-reveal nav" style="">
 				<li>
 					<input type="checkbox" name="showtitle4" class="show-title" />
@@ -92,11 +99,19 @@ section.field-form ul {
 	</section>
 </div>
 <script>
-$(document).ready(function(){
+function resetLiClicks(){
+	$('.field-form li').unbind('click');
+	
 	$('.field-form li').click(function(e){
 		$('.field-form li').removeClass('active');
 		$(e.currentTarget).addClass('active');
 	});
+
+}
+
+$(document).ready(function(){
+	resetLiClicks();
+	
 	var count = 6;
 	$('#add_collection_field_button').click(function(){
 		var li = '<li>' + 
@@ -110,8 +125,13 @@ $(document).ready(function(){
 					'</select>' +
 				'</li>';
 
-		$('.form-display').append(li);
+		if($('.field-form li.active')){
+			$('.field-form li.active').after(li);
+		} else {
+			$('.form-display').append(li);			
+		}
 		count++;
+		resetLiClicks();
 	});
 	$('#del_collection_field_button').click(function(){
 		$('.field-form li.active').remove();

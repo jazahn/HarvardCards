@@ -80,7 +80,7 @@ class CollectionController extends Controller
 				// insert into db
 				// if the insert doesn't fail
 				$collection_id = 1;
-				$this->redirect('/collection/wizard2/'.$collection_id);
+				$this->redirect($this->createUrl('/collection/wizard2/'.$collection_id));
 			}
 		}
 		

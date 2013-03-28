@@ -115,9 +115,9 @@ $(document).ready(function(){
 	var count = 6;
 	$('#add_collection_field_button').click(function(){
 		var li = '<li>' + 
-					'<input type="checkbox" name="showtitle'+count+'" class="show-title" />' +
-					'<input type="text" class="" name="fieldname'+count+'" />' + 
-					'<select name="type'+count+'" class="input-small">' +
+					'<input type="checkbox" name="showtitle'+count+'" class="show-title" /> ' +
+					'<input type="text" class="" name="fieldname'+count+'" /> ' + 
+					'<select name="type'+count+'" class="input-small"> ' +
 						'<option value="text">Text</option>' +
 						'<option value="image">Image</option>' +
 						'<option value="audio">Audio</option>' +

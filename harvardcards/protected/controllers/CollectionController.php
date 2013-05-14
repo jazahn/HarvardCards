@@ -44,7 +44,7 @@ class CollectionController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index', 'wizard1', 'wizard1form', 'wizard2'),
+				'actions'=>array('index', 'create', 'wizard2','wizarddd'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -63,7 +63,7 @@ class CollectionController extends Controller
 		$this->render('index', array());
     }
 	
-	public function actionWizard1()
+	public function actionCreate()
 	{
 		$this->layout = '//layouts/deck_management';
 				
@@ -84,7 +84,7 @@ class CollectionController extends Controller
 			}
 		}
 		
-		$this->render('wizard1', array());		
+		$this->render('create', array());		
 	}
 	
 	
@@ -93,6 +93,15 @@ class CollectionController extends Controller
 		// 
 		$collection_name = "Course Whatever";
 		$this->render('wizard2', array(
+			'collection_name' => $collection_name
+		));
+	}
+ 
+	public function actionWizarddd(){
+		$this->layout = '//layouts/deck_management';
+		// 
+		$collection_name = "Course Whatever";
+		$this->render('wizarddd', array(
 			'collection_name' => $collection_name
 		));
 	}

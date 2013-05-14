@@ -26,6 +26,7 @@
 
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.9.1.min.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap.min.js"></script>
+    <script src="http://www.appelsiini.net/download/jquery.jeditable.js"></script>
 
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>

@@ -10,6 +10,7 @@
 
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
 
     <style>
       body {
@@ -26,6 +27,7 @@
 
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.9.1.min.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <script src="http://www.appelsiini.net/download/jquery.jeditable.js"></script>
 
 

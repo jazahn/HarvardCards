@@ -98,11 +98,10 @@ class CollectionController extends Controller
 	}
  
 	public function actionWizarddd(){
-		$this->layout = '//layouts/deck_management';
-		// 
-		$collection_name = "Course Whatever";
+		//$this->layout = '//layouts/deck_management';
+		$this->layout = false;
+
 		$this->render('wizarddd', array(
-			'collection_name' => $collection_name
 		));
 	}
  

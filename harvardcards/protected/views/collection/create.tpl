@@ -27,15 +27,15 @@ section.well-dark {
 	</section>
 </div>
 <div class="row-fluid">
-	<section class="well-dark span8 offset2">
+	<section id="wizarddd" class="well-dark span8 offset2">
 		<div class="row-fluid">
-			<div class="well span4">
+			<div class="template-btn well span4">
 				Template 1
 			</div>
-			<div class="well span4">
+			<div class="template-btn well span4">
 				Template 2
 			</div>
-			<div class="well span4">
+			<div class="template-btn well span4">
 				Template 3
 			</div>
 		</div>
@@ -63,6 +63,42 @@ $(document).ready(function(){
 		onblur: 'submit'
 	});
 	
-
+	$('.template-btn').click(function(){
+		var template_url = '/collection/wizarddd';
+		$('#wizarddd').load(template_url);
+	});
+	
+	/*
+	$('#wizard1_submit_button').click(function(){
+		var next_url = '/collection/wizard1form';
+		// grab form vars
+		var data = {
+			title: $('#inputTitle').val(),
+			desc: $('#inputDescription').val()
+		};
+		// now send the form query
+		$.ajax({
+			type: 'POST',
+			url: next_url,
+			data: data,
+			dataType: 'json',
+			//error: failure,
+			success: function(response){
+				console.log(response);
+				console.log(response.errors.length);
+				if(response.errors.length == 0){
+					window.location = '/collection/wizard2';
+				} else {
+					if(response.errors.no_title){
+						alert("no title");
+					}
+					if(response.errors.no_desc){
+						alert("no description");
+					}
+				}
+			}
+		});
+	});
+	*/
 });
 </script>
